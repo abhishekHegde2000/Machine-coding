@@ -1,5 +1,6 @@
 
 import './App.css'
+import FormData from './challenges/FormData'
 import Progressbar from './components/Progressbar'
 import Timer from './components/Timer'
 import ShowHide from './components/showhide'
@@ -11,7 +12,8 @@ function App() {
 
   return (
     <div>
-      {/* <ShowHide /> */}{/* <Timer /> */}{/* <TodDo /> */}{/* <ToDo1 /> */}<Progressbar />
+      {/* <ShowHide /> */}{/* <Timer /> */}{/* <TodDo /> */}{/* <ToDo1 /> <Progressbar />*/}
+      <FormData/>
     </div>
   )
 }
