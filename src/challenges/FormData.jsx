@@ -1,18 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const FormData = () => {
-
-    const [username, setUsername] = useState('')
-    const [age, setAge] = useState('')
-
-    const [display, setDisplay] = useState(false)
+    const [username, setUsername] = useState('');
+    const [age, setAge] = useState('');
+    const [display, setDisplay] = useState(false);
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        setDisplay(true)
+        e.preventDefault();
+        setDisplay(true);
     }
-  return (
-    <div className='flex justify-center items-center flex-col'>
+
+    return (
+        <div className='flex justify-center items-center flex-col h-screen w-full'>
             <form 
             onSubmit={handleSubmit}
             className='flex flex-col border'>
@@ -28,9 +27,8 @@ const FormData = () => {
                     <p>Age: {age}</p>
                 </div>
             )}
-
-    </div>
-  )
+        </div>
+    )
 }
 
-export default FormData
+export default FormData;
