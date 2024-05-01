@@ -1,24 +1,68 @@
-"use client";
+// pages/index.js
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function Home() {
-    const [show, setShow] = useState(false);
+    const [timer, setTimer] = useState(0);
+    const [isRunning, setIsRunning] = useState(false);
+    const intervalRef = useRef(null);
 
-    let handleShow = () => {
-        setShow(!show);
+    const startTimer = () => {
+        setIsRunning(true);
+        intervalRef.current = setInterval(() => {
+            setTimer((prevTimer) => prevTimer + 1);
+        }, 1000);
     };
+
+    const stopTimer = () => {
+        clearInterval(intervalRef.current);
+        setIsRunning(false);
+    };
+
+    const resetTimer = () => {
+        clearInterval(intervalRef.current);
+        setTimer(0);
+        setIsRunning(false);
+    };
+
+    const formatTime = (time) => {
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+        return `${minutes.toString().padStart(2, "0")}:${seconds
+            .toString()
+            .padStart(2, "0")}`;
+    };
+
     return (
         <>
-            <Button
-                onClick={handleShow}
-                className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-md transition duration-300 ease-in-out"
-            >
-                click me man
-            </Button>
-            {show && <div>button clicked</div>}
+            <div className="flex justify-center mt-8">
+                <div className="border border-gray-300 rounded-md px-4 py-2 mx-2">
+                    {formatTime(timer)}
+                </div>
+            </div>
+            <div className="flex justify-center mt-4">
+                <Button
+                    className="gap-2 p-3 text-center m-2 border-2"
+                    onClick={startTimer}
+                    disabled={isRunning}
+                >
+                    Start
+                </Button>
+                <Button
+                    className="gap-2 p-3 text-center m-2 border-2"
+                    onClick={stopTimer}
+                    disabled={!isRunning}
+                >
+                    Stop
+                </Button>
+                <Button
+                    className="gap-2 p-3 text-center m-2 border-2"
+                    onClick={resetTimer}
+                >
+                    Reset
+                </Button>
+            </div>
         </>
     );
 }
