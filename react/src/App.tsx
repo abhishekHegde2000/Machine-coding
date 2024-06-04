@@ -1,34 +1,11 @@
-import React, { useState, useRef } from "react";
-import ParentComponent from "./components/ParentComponent";
+import Parent from "./components/Parent";
 
-function App() {
-    const [timer, setTimer] = useState(0);
-    const myTimer = useRef<NodeJS.Timeout | null>(null);
-
-    const startTimer = () => {
-        myTimer.current = setInterval(() => {
-            setTimer((timer) => timer + 1);
-        }, 1000);
-    };
-
-    const stopTimer = () => {
-        if (myTimer.current) {
-            clearInterval(myTimer.current);
-        }
-    };
-
-    const resetTimer = () => {
-        if (myTimer.current) {
-            clearInterval(myTimer.current);
-        }
-        setTimer(0);
-    };
-
+const App = () => {
     return (
-        <div className="container">
-            <ParentComponent />
+        <div>
+            <Parent />
         </div>
     );
-}
+};
 
 export default App;
