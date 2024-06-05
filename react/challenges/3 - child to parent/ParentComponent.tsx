@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ChildComponent from "./ChildComponent";
+import React from "react";
 
 function ParentComponent() {
     const [childData, setChildData] = useState<string>("");

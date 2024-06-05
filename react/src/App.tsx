@@ -1,10 +1,11 @@
-import Parent from "./components/Parent";
+import Greeting from "./components/Greeting";
 
 const App = () => {
     return (
-        <div>
-            <Parent />
-        </div>
+        <h1>
+            Hello from app
+            <Greeting name={"abhi"} />
+        </h1>
     );
 };
 

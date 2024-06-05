@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-interface ChildProps {
+type ChildProps = {
     onChildData: (data: string) => void;
-}
+};
 
 function ChildComponent({ onChildData }: ChildProps) {
     const [inputValue, setInputValue] = useState<string>("");
