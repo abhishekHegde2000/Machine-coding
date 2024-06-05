@@ -1,10 +1,10 @@
-import Greeting from "./components/Greeting";
+import Counter from "./components/Counter";
 
 const App = () => {
     return (
         <h1>
             Hello from app
-            <Greeting name={"abhi"} />
+            <Counter />
         </h1>
     );
 };
