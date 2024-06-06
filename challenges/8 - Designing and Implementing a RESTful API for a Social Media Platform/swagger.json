@@ -1,0 +1,80 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Your API Title",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/tweets": {
+      "get": {
+        "summary": "Retrieve a list of tweets",
+        "responses": {
+          "200": {
+            "description": "A list of tweets"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new tweet",
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/tweets/{id}": {
+      "get": {
+        "summary": "Retrieve a specific tweet by its ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of the tweet",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A single tweet"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update an existing tweet",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of the tweet",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updated"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a tweet",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of the tweet",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleted"
+          }
+        }
+      }
+    }
+  }
+}
