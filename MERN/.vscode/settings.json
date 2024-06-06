@@ -16,11 +16,9 @@
         "**/.prettierrc": true,
         "**/.prettierignore": true,
         "**/.gitignore": true,
-
         "**/src/App.tsx": false,
         "**/src/components": false,
         "**/src/components/*": false,
-
         "**/postcss.config.js": true,
         "**/tailwind.config.js": true,
         "**/tsconfig.node.json": true,
