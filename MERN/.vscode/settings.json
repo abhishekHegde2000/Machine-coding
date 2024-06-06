@@ -15,6 +15,30 @@
         "**/jest.config.js": true,
         "**/.prettierrc": true,
         "**/.prettierignore": true,
-        "**/.gitignore": true
+        "**/.gitignore": true,
+
+        "**/src/App.tsx": false,
+        "**/src/components": false,
+        "**/src/components/*": false,
+
+        "**/postcss.config.js": true,
+        "**/tailwind.config.js": true,
+        "**/tsconfig.node.json": true,
+        "**/vite.config.ts": true,
+        "**/README.md": true,
+        "components.json": true,
+        "index.html": true,
+        "**/src/lib": true,
+        "**/public": true,
+        "src/main.tsx": true,
+        "src/index.css": true,
+        ".eslintrc.cjs": true,
+        ".gitignore": true,
+        "tsconfig.json": true,
+        "**/vite-env.d.ts": true,
+        "**/App.css": true,
+        "**/index.css": true,
+        "**/index.html": true,
+        "**/.eslintrc.cjs": true
     }
 }
