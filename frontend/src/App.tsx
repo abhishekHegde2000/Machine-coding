@@ -1,5 +1,11 @@
+import TweetList from "./Components/TwitterList";
+
 function App() {
-    return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+    return (
+        <div>
+            <TweetList />
+        </div>
+    );
 }
 
 export default App;
