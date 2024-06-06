@@ -8,38 +8,38 @@ const TweetList: React.FC = () => {
 
     const URL = "http://localhost:3000/tweets";
 
-    // useEffect(() => {
-    //     axios
-    //         .get("/tweets")
-    //         .then((response) => {
-    //             console.log("Fetched tweets:", response.data);
-    //             setTweets(response.data);
-    //         })
-    //         .catch((error) => {
-    //             console.error("Error fetching tweets:", error);
-    //         });
-    // }, []);
+    useEffect(() => {
+        axios
+            .get(URL)
+            .then((response) => {
+                console.log("Fetched tweets:", response.data);
+                setTweets(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching tweets:", error);
+            });
+    }, []);
 
     //  now do it with fetch
 
-    const fetchTweets = async () => {
-        try {
-            const response = await fetch(URL);
-            if (response.ok) {
-                const data = await response.json();
-                console.log("Fetched tweets:", data);
-                setTweets(data);
-            } else {
-                console.error("Error fetching tweets:", response.statusText);
-            }
-        } catch (error) {
-            console.error("Error fetching tweets:", error);
-        }
-    };
+    // const fetchTweets = async () => {
+    //     try {
+    //         const response = await fetch(URL);
+    //         if (response.ok) {
+    //             const data = await response.json();
+    //             console.log("Fetched tweets:", data);
+    //             setTweets(data);
+    //         } else {
+    //             console.error("Error fetching tweets:", response.statusText);
+    //         }
+    //     } catch (error) {
+    //         console.error("Error fetching tweets:", error);
+    //     }
+    // };
 
-    useEffect(() => {
-        fetchTweets();
-    }, []);
+    // useEffect(() => {
+    //     fetchTweets();
+    // }, []);
 
     return (
         <div>
