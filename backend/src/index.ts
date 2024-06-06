@@ -1,8 +1,10 @@
+
 import express, { Request, Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
 import swaggerUi from "swagger-ui-express";
 import * as swaggerDocument from "./swagger.json";
+import { connectDb } from "./connectDb";
 
 const app = express();
 
@@ -11,8 +13,11 @@ app.use(cors());
 app.use(helmet());
 app.use(express.json());
 
+connectDb();
+
 // Swagger API documentation
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 // Sample data - Replace with your database integration
 let tweets: { id: number; text: string }[] = [
