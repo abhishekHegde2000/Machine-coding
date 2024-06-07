@@ -3,7 +3,7 @@
         "**/node_modules": true,
         "**/.env": true,
         "**/.eslintrc": true,
-        "**/package.json": true,
+        // "**/package.json": true,
         "**/package-lock.json": true,
         "**/tsconfig.json": true,
         "**/dist": true,
